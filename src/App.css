@@ -1,38 +1,286 @@
-.App {
-  text-align: center;
+:root {
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --bg-gradient: linear-gradient(135deg, #e0e7ff 0%, #f3f4f6 100%);
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.5);
+  --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  --text-main: #1f2937;
+  --text-light: #6b7280;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-main);
   min-height: 100vh;
+}
+
+.app-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.navbar {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  padding: 15px 30px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  margin-bottom: 30px;
+  border: var(--glass-border);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--text-light);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 12px;
+  transition: all 0.3s;
+}
+
+.link:hover, .link.active {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+.card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(4px);
+  border-radius: 16px;
+  border: var(--glass-border);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  transition: transform 0.2s ease;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+}
+
+.search-bar {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  align-items: center;
+}
+
+.search-input-wrapper {
+  position: relative;
+  flex-grow: 1;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px 12px 12px 40px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+select { padding-left: 12px; cursor: pointer; }
+input:focus, select:focus { outline: 2px solid var(--primary); border-color: transparent; }
+
+.contacts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.contact-card:hover { transform: translateY(-3px); }
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.name { font-weight: 700; font-size: 1.1rem; }
+
+.badge {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+.badge-blue { background: #dbeafe; color: #1e40af; }
+.badge-pink { background: #fce7f3; color: #9d174d; }
+.badge-green { background: #d1fae5; color: #065f46; }
+
+.phone { color: var(--text-light); display: flex; align-items: center; gap: 8px; }
+
+.card-footer {
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #ccc;
+  transition: 0.2s;
+}
+.btn-icon:hover { color: var(--primary); }
+.btn-delete:hover { color: #ef4444; }
+.star-active { color: #f59e0b; }
+
+.form-card { max-width: 500px; margin: 0 auto; }
+.btn-back {
+  background: none; border: none; cursor: pointer;
+  display: flex; align-items: center; gap: 5px;
+  color: var(--text-light); margin-bottom: 15px;
+}
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: 500; }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.stat-icon {
+  width: 50px; height: 50px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem;
   color: white;
 }
+.bg-blue { background: #3b82f6; }
+.bg-yellow { background: #f59e0b; }
+.bg-purple { background: #8b5cf6; }
+.bg-pink { background: #ec4899; }
+.bg-green { background: #10b981; }
 
-.App-link {
-  color: #61dafb;
+.stat-number {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 0;
+  color: var(--text-main);
+}
+.avatar-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.editing-mode {
+  border: 2px solid var(--primary);
+  background: #fff;
 }
+
+.edit-form-inline {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.edit-input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.edit-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+.editing-mode {
+  border: 2px solid var(--primary);
+  background-color: #fff;
+  transform: scale(1.02);
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.edit-input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.edit-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 5px;
+  padding-top: 10px;
+  border-top: 1px dashed #eee;
+}
+
+.save-btn { color: #10b981; background: #ecfdf5; border-radius: 50%; padding: 8px; }
+.cancel-btn { color: #ef4444; background: #fef2f2; border-radius: 50%; padding: 8px; }
+.edit-btn:hover { color: var(--primary); }
+.btn-icon a {
+  text-decoration: none;
+}
+.save-btn:hover { background: #10b981; color: white; }
+.cancel-btn:hover { background: #ef4444; color: white; }
+.save { color: #10b981; }
+.cancel { color: #6b7280; }
