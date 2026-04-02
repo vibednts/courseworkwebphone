@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/courseworkwebphone/static/css/main.bc80a154.css",
-    "main.js": "/courseworkwebphone/static/js/main.5f318f8a.js",
+    "main.js": "/courseworkwebphone/static/js/main.324a1e65.js",
     "index.html": "/courseworkwebphone/index.html",
     "main.bc80a154.css.map": "/courseworkwebphone/static/css/main.bc80a154.css.map",
-    "main.5f318f8a.js.map": "/courseworkwebphone/static/js/main.5f318f8a.js.map"
+    "main.324a1e65.js.map": "/courseworkwebphone/static/js/main.324a1e65.js.map"
   },
   "entrypoints": [
     "static/css/main.bc80a154.css",
-    "static/js/main.5f318f8a.js"
+    "static/js/main.324a1e65.js"
   ]
 }
