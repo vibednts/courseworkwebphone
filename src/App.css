@@ -284,3 +284,76 @@ input:focus, select:focus { outline: 2px solid var(--primary); border-color: tra
 .cancel-btn:hover { background: #ef4444; color: white; }
 .save { color: #10b981; }
 .cancel { color: #6b7280; }
+
+/* --- Адаптивність для мобільних пристроїв --- */
+@media (max-width: 600px) {
+  .app-wrapper {
+    padding: 10px; 
+  }
+
+  .navbar {
+    flex-direction: column;
+    padding: 15px;
+    gap: 15px;
+    border-radius: 15px;
+    align-items: center;
+  }
+
+  .nav-links {
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px;
+    width: 100%;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+  }
+
+  .link {
+    padding: 10px;
+    font-size: 0.85rem;
+    justify-content: center;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+  }
+  
+  .link span {
+    display: none;
+  }
+
+  .search-bar {
+    flex-direction: column; 
+    align-items: stretch;
+  }
+
+  .contacts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px;
+  }
+  
+  .stat-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px 10px;
+  }
+  
+  .stat-number {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .nav-links {
+    flex-wrap: wrap;
+  }
+}
